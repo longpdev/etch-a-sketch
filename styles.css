@@ -5,13 +5,22 @@ body{
 
 .container{
     border: 2px solid black;
+    display: grid;
+     /* grid-template-columns: repeat(var(--numCols), 1fr); */
+     grid-template-columns: auto auto;
+
+    padding: 10px;
+    height: 650px;
+    width: 650px;
 }
 
 .cell {
     border: 1px solid black;
+    display: flex;
+    align-items: center;
 }
 
-.container{
-    display: grid;
-    
+.my-color-class{
+    background-color: blue;
 }
+

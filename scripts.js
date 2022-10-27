@@ -7,5 +7,14 @@ function createGrid(n){
         cell.classList.add('cell');
         cell.textContent = '1';
         container.appendChild(cell);
+        cell.addEventListener('mouseover', (e) =>{
+            e.target.classList.add('my-color-class');
+        } );
     }
+}
+
+function makeGrid(row, numCol){
+    container.style.setProperty('--numCols', numCol); 
+
+    createGrid(2*row);
 }
