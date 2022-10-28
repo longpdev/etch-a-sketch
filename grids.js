@@ -1,14 +1,12 @@
 const container = document.querySelector('.container');
-const styleSheet = document.styleSheets
 
-
-function makeGrid(numCols, numRows){
+function setGridSize(numCols, numRows){
     container.style.setProperty('--numCols', numCols); 
     container.style.setProperty('--numRows', numRows); 
 }
 
-function createGrid(n){
-    for (i = 0; i < n; i++){
+function createGrid(userInput){
+    for (i = 0; i < userInput; i++){
         cell = document.createElement('div');
         cell.classList.add('cell');
 
@@ -18,8 +16,6 @@ function createGrid(n){
         // } );
     }
 }
-
-
 
 //change color when mouseover
 container.addEventListener('mouseover', (e) =>{
@@ -41,3 +37,6 @@ function reset(){
 
 }
 
+//defaultPage
+setGridSize(64,64);
+createGrid(64*64);
