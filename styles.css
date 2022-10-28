@@ -6,21 +6,24 @@ body{
 .container{
     border: 2px solid black;
     display: grid;
-     /* grid-template-columns: repeat(var(--numCols), 1fr); */
-     grid-template-columns: auto auto;
-
+     grid-template-columns: repeat(var(--numCols), 1fr);
+     grid-template-columns: repeat(var(--numRows), 1fr);
+    /* grid-template-columns: auto auto; */
+    display: grid;
+    justify-content: center;
+    margin:auto;
     padding: 10px;
     height: 650px;
     width: 650px;
 }
 
 .cell {
+    display:flex;
+    padding: 3px;
     border: 1px solid black;
-    display: flex;
-    align-items: center;
+    background-color: rgb(212, 211, 211);
 }
 
 .my-color-class{
     background-color: blue;
 }
-
