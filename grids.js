@@ -34,9 +34,33 @@ function reset(){
     }
     console.log(cells);
     console.log(cells[0]);
-
 }
+
+function removeCells(){
+    var child = container.lastElementChild;
+    while(child){
+        container.removeChild(child);
+        child = container.lastElementChild;
+    }
+}
+
 
 //defaultPage
 setGridSize(64,64);
 createGrid(64*64);
+
+
+function loadGrid(){
+    var stringInput = document.getElementById('user-input').value;
+    //position of 'x'
+    var xIndex = stringInput.indexOf('x');
+    var col = stringInput.slice(0, xIndex);
+    var row = stringInput.slice(xIndex+1, stringInput.length);
+
+    col = parseInt(col);
+    row = parseInt(row);
+    removeCells();
+    setGridSize(col,row);
+    createGrid(col*row);
+    
+}
